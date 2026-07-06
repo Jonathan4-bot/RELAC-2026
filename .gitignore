@@ -1,0 +1,72 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+!backend/uploads/photos/.gitkeep
+!backend/uploads/payments/.gitkeep
+!backend/uploads/badges/.gitkeep
+!backend/uploads/exports/.gitkeep
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
+*.jpeg 
+frontend/src/assets/images/podcast*.mp4 

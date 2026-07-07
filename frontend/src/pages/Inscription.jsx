@@ -299,20 +299,20 @@ function Inscription() {
                         </div>
 
                         {/* Fields */}
-                        <div className="w-full md:w-2/3 grid grid-cols-2 gap-4">
-                          <div className="col-span-2 sm:col-span-1">
+                        <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Prénom *</label>
                             <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} className="input-field" placeholder="Ex: Jean" required />
                           </div>
-                          <div className="col-span-2 sm:col-span-1">
+                          <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Nom de famille *</label>
                             <input type="text" name="nom" value={formData.nom} onChange={handleChange} className="input-field" placeholder="Ex: Kabila" required />
                           </div>
-                          <div className="col-span-2 sm:col-span-1">
+                          <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Postnom</label>
                             <input type="text" name="postnom" value={formData.postnom} onChange={handleChange} className="input-field" placeholder="Ex: Malu" />
                           </div>
-                          <div className="col-span-2 sm:col-span-1">
+                          <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Sexe *</label>
                             <select name="sexe" value={formData.sexe} onChange={handleChange} className="input-field">
                               <option value="">Sélectionner</option>
@@ -320,7 +320,7 @@ function Inscription() {
                               <option value="Féminin">Féminin</option>
                             </select>
                           </div>
-                          <div className="col-span-2">
+                          <div className="md:col-span-2">
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Date de naissance *</label>
                             <input type="date" name="date_naissance" value={formData.date_naissance} onChange={handleChange} className="input-field" required />
                           </div>
@@ -340,7 +340,7 @@ function Inscription() {
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Email</label>
                           <input type="email" name="email" value={formData.email} onChange={handleChange} className="input-field" placeholder="exemple@mail.com" />
                         </div>
-                        <div className="col-span-1 md:col-span-3">
+                        <div className="md:col-span-3">
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Adresse de résidence</label>
                           <input type="text" name="adresse" value={formData.adresse} onChange={handleChange} className="input-field" placeholder="Adresse complète..." />
                         </div>
@@ -356,7 +356,7 @@ function Inscription() {
                       </h3>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="col-span-2">
+                        <div className="md:col-span-2">
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Église d'origine *</label>
                           <select
                             name="eglise"
@@ -384,7 +384,7 @@ function Inscription() {
 
                         {/* Champ conditionnel si "Autres" */}
                         {formData.eglise === "Autres" && (
-                          <div className="col-span-2">
+                          <div className="md:col-span-2">
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">
                               Précisez le nom de votre église *
                             </label>
@@ -420,7 +420,7 @@ function Inscription() {
                             <option value="false">Non</option>
                           </select>
                         </div>
-                        <div className="col-span-1 md:col-span-2">
+                        <div className="md:col-span-2">
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Comment avez-vous connu la RELAC ?</label>
                           <select name="comment_connu" value={formData.comment_connu} onChange={handleChange} className="input-field">
                             <option value="">Sélectionner</option>
@@ -445,7 +445,7 @@ function Inscription() {
                       </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="col-span-2">
+                        <div className="md:col-span-2">
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Nom complet du contact d'urgence *</label>
                           <input type="text" name="urgence_nom" value={formData.urgence_nom} onChange={handleChange} className="input-field" placeholder="Ex: Marie Kabila" required />
                         </div>
@@ -488,7 +488,7 @@ function Inscription() {
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Traitement médical en cours</label>
                           <textarea name="traitements_medicaux" value={formData.traitements_medicaux} onChange={handleChange} className="input-field h-24" placeholder="Détaillez les médicaments et posologies si nécessaire..."></textarea>
                         </div>
-                        <div className="col-span-2">
+                        <div className="md:col-span-2">
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Informations complémentaires</label>
                           <textarea name="infos_medicales_complementaires" value={formData.infos_medicales_complementaires} onChange={handleChange} className="input-field h-20" placeholder="Autre détail médical important..."></textarea>
                         </div>
@@ -525,7 +525,7 @@ function Inscription() {
                         {formData.mode_paiement && renderPaymentInstructions()}
 
                         {formData.mode_paiement && formData.mode_paiement !== "Cash" && (
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                          <div className="grid grid-cols-1 gap-4 mt-6">
                             <div>
                               <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Numéro de transaction (ID) *</label>
                               <input type="text" name="reference_paiement" value={formData.reference_paiement} onChange={handleChange} className="input-field" placeholder="Ex: MP2607..." required />

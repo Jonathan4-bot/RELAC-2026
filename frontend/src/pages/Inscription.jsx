@@ -299,7 +299,7 @@ function Inscription() {
                         </div>
 
                         {/* Fields */}
-                        <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="w-full md:w-2/3 grid grid-cols-1 gap-4">
                           <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Prénom *</label>
                             <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} className="input-field" placeholder="Ex: Jean" required />
@@ -320,14 +320,14 @@ function Inscription() {
                               <option value="Féminin">Féminin</option>
                             </select>
                           </div>
-                          <div className="md:col-span-2">
+                          <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Date de naissance *</label>
                             <input type="date" name="date_naissance" value={formData.date_naissance} onChange={handleChange} className="input-field" required />
                           </div>
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 gap-4">
                         <div>
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Téléphone *</label>
                           <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} className="input-field" placeholder="+243..." required />
@@ -340,7 +340,7 @@ function Inscription() {
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Email</label>
                           <input type="email" name="email" value={formData.email} onChange={handleChange} className="input-field" placeholder="exemple@mail.com" />
                         </div>
-                        <div className="md:col-span-3">
+                        <div>
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Adresse de résidence</label>
                           <input type="text" name="adresse" value={formData.adresse} onChange={handleChange} className="input-field" placeholder="Adresse complète..." />
                         </div>
@@ -355,8 +355,8 @@ function Inscription() {
                         Profil Ecclésiastique
                       </h3>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="md:col-span-2">
+                      <div className="grid grid-cols-1 gap-4">
+                        <div>
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Église d'origine *</label>
                           <select
                             name="eglise"
@@ -384,7 +384,7 @@ function Inscription() {
 
                         {/* Champ conditionnel si "Autres" */}
                         {formData.eglise === "Autres" && (
-                          <div className="md:col-span-2">
+                          <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">
                               Précisez le nom de votre église *
                             </label>
@@ -420,7 +420,7 @@ function Inscription() {
                             <option value="false">Non</option>
                           </select>
                         </div>
-                        <div className="md:col-span-2">
+                        <div>
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Comment avez-vous connu la RELAC ?</label>
                           <select name="comment_connu" value={formData.comment_connu} onChange={handleChange} className="input-field">
                             <option value="">Sélectionner</option>
@@ -444,8 +444,8 @@ function Inscription() {
                         Indiquez une personne de confiance de votre entourage à contacter en cas de besoin ou de problème de santé.
                       </p>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="md:col-span-2">
+                      <div className="grid grid-cols-1 gap-4">
+                        <div>
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Nom complet du contact d'urgence *</label>
                           <input type="text" name="urgence_nom" value={formData.urgence_nom} onChange={handleChange} className="input-field" placeholder="Ex: Marie Kabila" required />
                         </div>
@@ -471,7 +471,7 @@ function Inscription() {
                         Ces informations sont strictement confidentielles et réservées exclusivement à l'équipe médicale de la retraite pour assurer votre sécurité.
                       </p>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 gap-4">
                         <div>
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Maladie chronique / Suivi particulier</label>
                           <textarea name="maladie_chronique" value={formData.maladie_chronique} onChange={handleChange} className="input-field h-24" placeholder="Ex: Asthme, Diabète..."></textarea>
@@ -488,7 +488,7 @@ function Inscription() {
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Traitement médical en cours</label>
                           <textarea name="traitements_medicaux" value={formData.traitements_medicaux} onChange={handleChange} className="input-field h-24" placeholder="Détaillez les médicaments et posologies si nécessaire..."></textarea>
                         </div>
-                        <div className="md:col-span-2">
+                        <div>
                           <label className="block text-xs font-bold uppercase tracking-wider text-secondary mb-1">Informations complémentaires</label>
                           <textarea name="infos_medicales_complementaires" value={formData.infos_medicales_complementaires} onChange={handleChange} className="input-field h-20" placeholder="Autre détail médical important..."></textarea>
                         </div>

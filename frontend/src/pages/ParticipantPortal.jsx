@@ -8,6 +8,7 @@ import {
   FaClock, FaTimesCircle, FaDownload, FaQrcode, FaSpinner, FaArrowLeft, FaCross,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import relacLogo from '../assets/images/relaclogo.png';
 
 const API_BASE = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000';
 
@@ -145,7 +146,7 @@ function ParticipantPortal() {
               <div className="bg-secondary p-6 text-white flex justify-between items-center relative">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <img src="/src/assets/images/relaclogo.png" alt="" className="w-6 h-6 object-contain rounded" />
+                    <img src={relacLogo} alt="" className="w-6 h-6 object-contain rounded" />
                     <span className="font-display font-black text-sm tracking-tight text-white">RELAC 2026</span>
                   </div>
                   <span className="text-[9px] uppercase font-bold text-white/50 tracking-widest block">Badge Officiel Participant</span>

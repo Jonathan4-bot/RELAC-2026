@@ -6,6 +6,8 @@ import AboutRelac from "../components/AboutRelac";
 import Objectives from "../components/Objectives";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import jelorLogo from "../assets/images/jelorlogo.jpeg";
+import relacLogo from "../assets/images/relaclogo.png";
 import {
   FaBookOpen,
   FaPrayingHands,
@@ -230,7 +232,7 @@ function Home() {
             <div className="flex items-center gap-4 bg-white/5 backdrop-blur-md px-6 py-2.5 rounded-2xl border border-white/10">
               {/* JELOR Logo */}
               <img
-                src="/src/assets/images/jelorlogo.jpeg"
+                src={jelorLogo}
                 alt="JELOR Logo"
                 className="h-10 w-10 object-contain rounded-lg animate-float"
                 onError={(e) => { e.target.style.display = "none"; }}
@@ -239,7 +241,7 @@ function Home() {
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
               {/* ReLAc Logo */}
               <img
-                src="/src/assets/images/relaclogo.png"
+                src={relacLogo}
                 alt="ReLAc Logo"
                 className="h-10 w-10 object-contain rounded-lg animate-float"
                 onError={(e) => { e.target.style.display = "none"; }}

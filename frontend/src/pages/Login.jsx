@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FaUser, FaLock, FaSignInAlt, FaCross } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import relacLogo from '../assets/images/relaclogo.png';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -50,7 +51,7 @@ function Login() {
             
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-10">
-                <img src="/src/assets/images/relaclogo.png" alt="Logo" className="w-10 h-10 object-contain rounded-xl" />
+                <img src={relacLogo} alt="Logo" className="w-10 h-10 object-contain rounded-xl" />
                 <span className="font-display font-black text-xl tracking-tight text-white">RELAC 2026</span>
               </div>
               <h2 className="text-3xl font-black font-display leading-tight mb-4">

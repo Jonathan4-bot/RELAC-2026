@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import jelorLogo from "../assets/images/jelorlogo.jpeg";
+import relacLogo from "../assets/images/relaclogo.png";
 
 function Navbar({ transparent = true }) {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +49,7 @@ function Navbar({ transparent = true }) {
           <Link to="/" className="flex items-center gap-3 group">
             {/* JELOR logo */}
             <img
-              src="/src/assets/images/jelorlogo.jpeg"
+              src={jelorLogo}
               alt="JELOR Logo"
               className="h-9 w-9 object-contain rounded-lg"
               onError={(e) => { e.target.style.display = "none"; }}
@@ -56,7 +58,7 @@ function Navbar({ transparent = true }) {
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
             {/* ReLAc logo */}
             <img
-              src="/src/assets/images/relaclogo.png"
+              src={relacLogo}
               alt="ReLAc Logo"
               className="h-9 w-9 object-contain rounded-lg"
               onError={(e) => { e.target.style.display = "none"; }}

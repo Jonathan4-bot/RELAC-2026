@@ -4,7 +4,8 @@ import {
   FaPhoneAlt, FaEnvelope, FaAngleRight, FaHeart,
 } from "react-icons/fa";
 import AnimatedSection from "./AnimatedSection";
-
+import jelorLogo from "../assets/images/jelorlogo.jpeg";
+import relacLogo from "../assets/images/relaclogo.png";
 function Footer() {
   const quickLinks = [
     { label: "À propos", href: "#apropos" },
@@ -50,7 +51,7 @@ function Footer() {
               <Link to="/" className="flex items-center gap-3 mb-5 group">
                 {/* JELOR Logo */}
                 <img
-                  src="/src/assets/images/jelorlogo.jpeg"
+                  src={jelorLogo}
                   alt="JELOR Logo"
                   className="h-11 w-11 object-contain rounded-xl"
                   onError={(e) => { e.target.style.display = "none"; }}
@@ -59,7 +60,7 @@ function Footer() {
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
                 {/* ReLAc Logo */}
                 <img
-                  src="/src/assets/images/relaclogo.png"
+                  src={relacLogo}
                   alt="ReLAc Logo"
                   className="h-11 w-11 object-contain rounded-xl"
                   onError={(e) => { e.target.style.display = "none"; }}

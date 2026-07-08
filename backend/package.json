@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run migrate && node server.js",
     "dev": "nodemon server.js",
     "migrate": "node src/database/migrate.js",
     "change-password": "node change-admin-password.js"

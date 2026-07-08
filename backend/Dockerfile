@@ -7,8 +7,6 @@ RUN npm install --omit=dev
 
 COPY . .
 
-RUN npm run migrate
-
 EXPOSE 5000
 
 CMD ["node", "server.js"]

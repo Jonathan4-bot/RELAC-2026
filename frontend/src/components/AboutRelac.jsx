@@ -9,10 +9,10 @@ import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 // Import real images from assets to showcase the event
-import relac1 from "../assets/images/relac 1.jpeg";
-import relac2 from "../assets/images/relac 2.jpeg";
-import relac3 from "../assets/images/relac 3.jpeg";
-import relac4 from "../assets/images/relac 4.jpeg";
+import relac1 from "../assets/images/relac-1.jpeg";
+import relac2 from "../assets/images/relac-2.jpeg";
+import relac3 from "../assets/images/relac-3.jpeg";
+import relac4 from "../assets/images/relac-4.jpeg";
 
 // Import 25 new gallery images
 import g1 from "../assets/images/relac_gallery_1.jpeg";

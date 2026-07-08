@@ -178,4 +178,5 @@ function migrate() {
   console.log('👤 Admin: admin@relac2026.com / Admin123!');
 }
 
-migrate();
+export { migrate };
+export default migrate;

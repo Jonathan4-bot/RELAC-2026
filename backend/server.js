@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { migrate } from './src/database/migrate.js';
 
 // Import routes
 import authRoutes from './src/routes/auth.routes.js';
@@ -21,6 +22,16 @@ dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Run migrations BEFORE starting the server
+try {
+  console.log('🔄 Lancement des migrations...');
+  migrate();
+  console.log('✅ Migrations terminées.');
+} catch (err) {
+  console.error('❌ Erreur lors de la migration:', err);
+  process.exit(1);
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;

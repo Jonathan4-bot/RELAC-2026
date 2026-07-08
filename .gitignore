@@ -68,5 +68,6 @@ coverage/
 *.pid
 *.seed
 *.pid.lock
-*.jpeg 
-frontend/src/assets/images/podcast*.mp4 
+/*.jpeg
+/logo*.jpeg
+frontend/src/assets/images/podcast*.mp4

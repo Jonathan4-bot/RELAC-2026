@@ -28,10 +28,10 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import real images from assets
-import relac1 from "../assets/images/relac 1.jpeg";
-import relac2 from "../assets/images/relac 2.jpeg";
-import relac3 from "../assets/images/relac 3.jpeg";
-import relac4 from "../assets/images/relac 4.jpeg";
+import relac1 from "../assets/images/relac-1.jpeg";
+import relac2 from "../assets/images/relac-2.jpeg";
+import relac3 from "../assets/images/relac-3.jpeg";
+import relac4 from "../assets/images/relac-4.jpeg";
 
 const slides = [
   { img: relac1, icon: <FaCross />, label: "Louange & Adoration" },

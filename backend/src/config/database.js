@@ -14,11 +14,16 @@ if (!fs.existsSync(dbDir)) {
 }
 
 const dbPath = path.join(dbDir, 'database.sqlite');
-const db = new DatabaseSync(dbPath);
-
-// Activer les clés étrangères
-db.exec('PRAGMA foreign_keys = ON');
-
-console.log('✅ SQLite natif connecté - Fichier:', dbPath);
+let db;
+try {
+  console.log('📂 Tentative d\'ouverture de la base de données à:', dbPath);
+  db = new DatabaseSync(dbPath);
+  // Activer les clés étrangères
+  db.exec('PRAGMA foreign_keys = ON');
+  console.log('✅ SQLite natif connecté - Fichier:', dbPath);
+} catch (error) {
+  console.error('❌ ERREUR CRITIQUE D\'OUVERTURE DE LA BASE DE DONNEES:', error);
+  process.exit(1);
+}
 
 export default db;

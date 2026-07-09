@@ -172,6 +172,16 @@ function migrate() {
     console.log('👤 Comptes existants trouvés, aucun admin créé');
   }
 
+  // Corriger les matricules existants s'ils sont nuls
+  try {
+    const result = db.prepare("UPDATE participants SET matricule = numero_dossier WHERE matricule IS NULL").run();
+    if (result.changes > 0) {
+      console.log(`🔧 ${result.changes} matricules existants ont été corrigés.`);
+    }
+  } catch (err) {
+    console.error('⚠️ Impossible de mettre à jour les matricules existants:', err.message);
+  }
+
   console.log('');
   console.log('✅ Migration terminée avec succès !');
   console.log('📊 Base SQLite prête');

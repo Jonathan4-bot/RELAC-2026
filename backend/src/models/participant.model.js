@@ -12,7 +12,7 @@ export class Participant {
 
     const stmt = db.prepare(`
       INSERT INTO participants (
-        numero_dossier, nom, postnom, prenom, sexe, date_naissance,
+        numero_dossier, matricule, nom, postnom, prenom, sexe, date_naissance,
         telephone, whatsapp, adresse, email, photo_url,
         eglise, departement, fonction, responsable_spirituel,
         urgence_nom, urgence_lien, urgence_telephone,
@@ -20,10 +20,10 @@ export class Participant {
         infos_medicales_complementaires, mode_paiement, reference_paiement,
         preuve_paiement_url, deja_participe, comment_connu
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     const info = stmt.run(
-      clean(data.numero_dossier), clean(data.nom), clean(data.postnom), clean(data.prenom), clean(data.sexe),
+      clean(data.numero_dossier), clean(data.matricule), clean(data.nom), clean(data.postnom), clean(data.prenom), clean(data.sexe),
       clean(data.date_naissance), clean(data.telephone), clean(data.whatsapp), clean(data.adresse), clean(data.email),
       clean(data.photo_url),
       clean(data.eglise), clean(data.departement), clean(data.fonction), clean(data.responsable_spirituel),
@@ -162,7 +162,7 @@ export class Participant {
 
   static generateMatricule() {
     const year = new Date().getFullYear();
-    const result = db.prepare(`SELECT MAX(CAST(SUBSTR(matricule, -3) AS INTEGER)) as maxCount FROM participants WHERE matricule LIKE ?`).get(`ReLAc${year}-%`);
+    const result = db.prepare(`SELECT MAX(CAST(SUBSTR(numero_dossier, -3) AS INTEGER)) as maxCount FROM participants WHERE numero_dossier LIKE ?`).get(`ReLAc${year}-%`);
     
     let count = 1;
     if (result && result.maxCount !== null) {
